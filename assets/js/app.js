@@ -7,9 +7,9 @@
    * ======================================================= */
   var WHATSAPP = "972548058710";
   var EMAIL = "mcmaorcohen851@gmail.com";
-  // כשמאור פותח חשבון Formspree (חינם) — להדביק כאן את ה-ID, למשל "xkgwabcd".
-  // כל עוד ריק — הטופס נשלח דרך המייל (mailto).
-  var FORMSPREE_ID = "";
+  // הטופס נשלח דרך FormSubmit (חינם, בלי חשבון) ישירות לאימייל.
+  // בשליחה הראשונה FormSubmit שולח מייל אימות חד-פעמי — ללחוץ על הקישור שבו.
+  var FORMSUBMIT_URL = "https://formsubmit.co/ajax/" + EMAIL;
 
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -121,7 +121,7 @@
       cat: "web", catLabel: "חנויות אונליין",
       desc: "קטלוג אונליין מלא למדבקות רכב בהתאמה אישית: מאות מוצרים, סינון לפי דגם רכב, עגלת קניות והכנה מלאה למעבר ל-WooCommerce.",
       tech: ["HTML/CSS/JS", "WooCommerce", "SEO"],
-      img: "assets/img/projects/shai-sabag.jpg",
+      img: "assets/img/projects/shai-sabag-live.jpg",
       alt: "חנות המדבקות של שי סבג — עמוד הבית של הקטלוג"
     },
     {
@@ -130,7 +130,7 @@
       cat: "web", catLabel: "אתרים",
       desc: "אתר אפיליאציה עתידני בעיצוב ניאון-זכוכית: קטלוג מוצרים דינמי, עמודי מוצר, ומערכת קישורים חכמה שמייצרת הכנסה מכל הפניה.",
       tech: ["HTML/CSS/JS", "Affiliate", "SEO"],
-      img: "assets/img/projects/luxora.svg",
+      img: "assets/img/projects/luxora-live.jpg",
       alt: "אתר LUXORA — קטלוג דילים בעיצוב ניאון עתידני"
     },
     {
@@ -157,17 +157,8 @@
       cat: "ads", catLabel: "קמפיינים",
       desc: "ליווי שיווקי מלא למותג תכשיטים: אסטרטגיית מודעות בפייסבוק ואינסטגרם, קריאייטיב בווידאו AI, ודשבורד אנליטיקס מותאם למעקב תוצאות.",
       tech: ["Meta Ads", "Shopify", "Chart.js", "AI Video"],
-      img: "assets/img/projects/moran-dahan.svg",
+      img: "assets/img/projects/moran-dahan-live.jpg",
       alt: "דשבורד קמפיין מורן דהן — גרפים ומדדי ביצוע"
-    },
-    {
-      id: "liquidity-bot",
-      name: "בוט מסחר אלגוריתמי",
-      cat: "auto", catLabel: "פינטק",
-      desc: "מערכת מסחר כמותית: אסטרטגיות SMC בפייתון וב-Pine Script, בקטסטים על מדדים מובילים ומנוע ביצוע אוטומטי ל-MetaTrader 5.",
-      tech: ["Python", "MQL5", "Pine Script", "Backtesting"],
-      img: "assets/img/projects/liquidity-bot.svg",
-      alt: "בוט מסחר אלגוריתמי — גרף נרות עם קו מגמה"
     }
   ];
 
@@ -265,21 +256,29 @@
       e.preventDefault();
       var data = new FormData(form);
       var msg = document.getElementById("form-msg");
+      var btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true; btn.textContent = "שולח…";
 
-      if (FORMSPREE_ID) {
-        fetch("https://formspree.io/f/" + FORMSPREE_ID, {
-          method: "POST", body: data, headers: { Accept: "application/json" }
-        }).then(function (res) {
-          if (res.ok) {
-            form.reset();
-            msg.className = "form-msg ok";
-            msg.textContent = "ההודעה נשלחה! נחזור אליך תוך 24 שעות 🚀";
-          } else { throw new Error(); }
-        }).catch(function () {
-          msg.className = "form-msg err";
-          msg.textContent = "משהו השתבש — אפשר לכתוב לנו ישירות בוואטסאפ";
-        });
-      } else {
+      data.append("_subject", "🚀 פנייה חדשה מהאתר — " + data.get("name"));
+      data.append("_template", "table");
+      data.append("_captcha", "false");
+
+      // אירוע ליד ל-Google Analytics (אם מחובר)
+      if (typeof gtag === "function") {
+        gtag("event", "generate_lead", { method: "contact_form", project_type: data.get("type") });
+      }
+
+      fetch(FORMSUBMIT_URL, {
+        method: "POST", body: data, headers: { Accept: "application/json" }
+      }).then(function (res) {
+        if (!res.ok) throw new Error();
+        return res.json();
+      }).then(function () {
+        form.reset();
+        msg.className = "form-msg ok";
+        msg.textContent = "ההודעה נשלחה! נחזור אליך תוך 24 שעות 🚀";
+      }).catch(function () {
+        // fallback: פתיחת טיוטת מייל
         var body =
           "שם: " + data.get("name") + "\n" +
           "טלפון: " + data.get("phone") + "\n" +
@@ -291,7 +290,9 @@
           "&body=" + encodeURIComponent(body);
         msg.className = "form-msg ok";
         msg.textContent = "נפתחה טיוטת מייל — רק ללחוץ שליחה 📩";
-      }
+      }).finally(function () {
+        btn.disabled = false; btn.textContent = "שלחו ונחזור אליכם ⚡";
+      });
     });
   }
 
@@ -301,6 +302,9 @@
   var waText = encodeURIComponent("היי מאור! ראיתי את האתר של MC Digital ואשמח לשמוע פרטים");
   document.querySelectorAll("[data-wa]").forEach(function (a) {
     a.href = "https://wa.me/" + WHATSAPP + "?text=" + waText;
+    a.addEventListener("click", function () {
+      if (typeof gtag === "function") gtag("event", "generate_lead", { method: "whatsapp" });
+    });
   });
 
   /* שנה נוכחית בפוטר */

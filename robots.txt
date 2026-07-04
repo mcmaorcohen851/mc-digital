@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /dashboard/
 
 Sitemap: https://mcmaorcohen851.github.io/mc-digital/sitemap.xml

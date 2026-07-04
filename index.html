@@ -36,6 +36,20 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/fx.css">
 
+  <!-- Google Analytics 4 — להדביק את ה-Measurement ID (G-XXXXXXXXXX) במשתנה למטה -->
+  <script>
+    window.GA_ID = ""; // ← אחרי יצירת נכס GA4: להדביק כאן, למשל "G-AB12CD34EF"
+    if (window.GA_ID) {
+      var s = document.createElement("script");
+      s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=" + window.GA_ID;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag("js", new Date()); gtag("config", window.GA_ID);
+      window.gtag = gtag;
+    }
+  </script>
+
   <!-- Schema.org -->
   <script type="application/ld+json">
   {

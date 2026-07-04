@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>MC Digital — לוח בקרה אישי</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg:#05040d; --bg-2:#0c0a18; --surface:rgba(255,255,255,.04); --surface-2:rgba(255,255,255,.07);
+      --border:rgba(255,255,255,.10); --text:#f4f3fb; --muted:#a7a4c4;
+      --violet:#8b5cf6; --cyan:#22d3ee; --pink:#f472b6; --green:#25d366; --gold:#f5d782;
+      --grad:linear-gradient(135deg,#8b5cf6,#22d3ee); --radius:16px;
+    }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:"Heebo",system-ui,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; padding:1.5rem; }
+    body::before { content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
+      background: radial-gradient(60vw 60vw at 85% -10%, rgba(139,92,246,.18), transparent 60%),
+                  radial-gradient(50vw 50vw at 0% 110%, rgba(34,211,238,.12), transparent 60%), var(--bg); }
+    .wrap { max-width:1100px; margin-inline:auto; }
+    a { color:var(--cyan); text-decoration:none; }
+
+    header { display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; margin-bottom:1.6rem; }
+    .brand { font-size:1.5rem; font-weight:900; display:flex; align-items:center; gap:.5rem; direction:ltr; }
+    .brand b { background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .brand .dot { width:10px; height:10px; border-radius:50%; background:var(--grad); box-shadow:0 0 14px var(--cyan); }
+    .sub { color:var(--muted); font-size:.9rem; }
+    .live { display:inline-flex; align-items:center; gap:.4rem; font-size:.8rem; font-weight:700; color:#19e36a; }
+    .live i { width:8px; height:8px; border-radius:50%; background:#19e36a; box-shadow:0 0 10px #19e36a; animation:blink 1.5s infinite; }
+    @keyframes blink { 50% { opacity:.3; } }
+
+    .kpis { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:1rem; margin-bottom:1.4rem; }
+    .kpi { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:1.1rem 1.2rem; }
+    .kpi .lbl { color:var(--muted); font-size:.85rem; font-weight:600; }
+    .kpi .val { font-size:2rem; font-weight:900; line-height:1.3; }
+    .kpi.v .val { color:var(--violet); } .kpi.c .val { color:var(--cyan); }
+    .kpi.g .val { color:#19e36a; } .kpi.p .val { color:var(--pink); }
+
+    .grid2 { display:grid; grid-template-columns:1.2fr .8fr; gap:1rem; margin-bottom:1.4rem; }
+    @media (max-width:860px){ .grid2 { grid-template-columns:1fr; } }
+    .card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:1.3rem 1.4rem; }
+    .card h2 { font-size:1.05rem; font-weight:800; margin-bottom:1rem; display:flex; align-items:center; gap:.5rem; }
+    .card h2::before { content:""; width:8px; height:8px; border-radius:50%; background:var(--grad); box-shadow:0 0 10px var(--violet); }
+
+    table { width:100%; border-collapse:collapse; font-size:.9rem; }
+    th { text-align:start; color:var(--muted); font-weight:700; padding:.45rem .5rem; border-bottom:1px solid var(--border); font-size:.8rem; }
+    td { padding:.55rem .5rem; border-bottom:1px solid rgba(255,255,255,.05); }
+    .badge { display:inline-block; font-size:.72rem; font-weight:800; padding:.15rem .6rem; border-radius:999px; }
+    .st-new     { background:rgba(34,211,238,.12);  color:var(--cyan);  border:1px solid rgba(34,211,238,.35); }
+    .st-talking { background:rgba(139,92,246,.12);  color:#b79cfa;      border:1px solid rgba(139,92,246,.35); }
+    .st-quoted  { background:rgba(245,215,130,.12); color:var(--gold);  border:1px solid rgba(245,215,130,.35); }
+    .st-won     { background:rgba(37,211,102,.12);  color:#19e36a;      border:1px solid rgba(37,211,102,.35); }
+    .st-lost    { background:rgba(244,114,182,.10); color:var(--pink);  border:1px solid rgba(244,114,182,.3); }
+    .empty { color:var(--muted); text-align:center; padding:1.6rem 0; font-size:.92rem; }
+
+    .check { list-style:none; }
+    .check li { display:flex; align-items:center; gap:.6rem; padding:.4rem 0; font-size:.92rem; }
+    .check .box { width:20px; height:20px; border-radius:6px; border:1.5px solid var(--border); display:grid; place-items:center; font-size:.75rem; flex-shrink:0; }
+    .check li.done .box { background:rgba(37,211,102,.15); border-color:#19e36a; color:#19e36a; }
+    .check li.done span { color:var(--muted); text-decoration:line-through; }
+
+    .links { display:flex; gap:.6rem; flex-wrap:wrap; }
+    .links a { background:var(--surface-2); border:1px solid var(--border); border-radius:999px; padding:.45rem 1rem; font-size:.85rem; font-weight:700; color:var(--text); transition:border-color .2s, transform .2s; }
+    .links a:hover { border-color:var(--violet); transform:translateY(-2px); }
+    canvas { max-height:260px; }
+    .note { font-size:.8rem; color:var(--muted); margin-top:.7rem; }
+    footer { color:var(--muted); font-size:.8rem; text-align:center; margin-top:1.6rem; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <div class="brand"><span class="dot"></span>MC <b>Digital</b> · לוח בקרה</div>
+      <div class="sub">מעקב פניות, מיקומים בגוגל והתקדמות — עדכון אחרון: <span id="updated"></span></div>
+    </div>
+    <span class="live"><i></i> LIVE</span>
+  </header>
+
+  <div class="kpis">
+    <div class="kpi c"><div class="lbl">סה"כ פניות</div><div class="val" id="k-total">0</div></div>
+    <div class="kpi v"><div class="lbl">בשיחה פעילה</div><div class="val" id="k-talking">0</div></div>
+    <div class="kpi p"><div class="lbl">הצעות מחיר פתוחות</div><div class="val" id="k-quoted">0</div></div>
+    <div class="kpi g"><div class="lbl">עסקאות שנסגרו 🎉</div><div class="val" id="k-won">0</div></div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h2>הפניות שלי</h2>
+      <div id="leads-holder"></div>
+      <p class="note">פנייה חדשה מהטופס מגיעה למייל + מוואטסאפ. רושמים אותה כאן ב-<code>dashboard/data.js</code> ודוחפים — או מבקשים מ-Claude להוסיף.</p>
+    </div>
+    <div class="card">
+      <h2>צ'קליסט הקמה</h2>
+      <ul class="check" id="checklist"></ul>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h2>מיקומים בגוגל (מילות מפתח)</h2>
+      <canvas id="rankChart"></canvas>
+      <p class="note">ציר Y הפוך — נמוך יותר = מיקום טוב יותר. הסוכן השבועי מעדכן אחרי חיבור Search Console.</p>
+    </div>
+    <div class="card">
+      <h2>תנועה שבועית (חשיפות / קליקים)</h2>
+      <canvas id="trafficChart"></canvas>
+      <p class="note">הנתונים נמשכים מ-Search Console ע"י הסוכן השבועי; אחרי חיבור GA יתווספו מבקרים בזמן אמת.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>קיצורי דרך</h2>
+    <div class="links">
+      <a href="../index.html">🌐 האתר החי</a>
+      <a href="https://analytics.google.com" target="_blank" rel="noopener">📊 Google Analytics</a>
+      <a href="https://search.google.com/search-console" target="_blank" rel="noopener">🔎 Search Console</a>
+      <a href="https://business.google.com" target="_blank" rel="noopener">📍 Business Profile</a>
+      <a href="https://github.com/mcmaorcohen851/mc-digital" target="_blank" rel="noopener">💻 GitHub Repo</a>
+    </div>
+  </div>
+
+  <footer>MC Digital · הדשבורד פרטי (noindex) · לעדכון נתונים: dashboard/data.js</footer>
+</div>
+
+<script src="data.js"></script>
+<script>
+(function(){
+  var D = window.DASH;
+  document.getElementById("updated").textContent = D.updated;
+
+  /* KPIs */
+  var count = function(st){ return D.leads.filter(function(l){ return l.status===st; }).length; };
+  document.getElementById("k-total").textContent = D.leads.length;
+  document.getElementById("k-talking").textContent = count("talking") + count("new");
+  document.getElementById("k-quoted").textContent = count("quoted");
+  document.getElementById("k-won").textContent = count("won");
+
+  /* Leads table */
+  var holder = document.getElementById("leads-holder");
+  if (!D.leads.length) {
+    holder.innerHTML = '<div class="empty">עדיין אין פניות — צא לשגרת השעה היומית מה-Playbook 💪</div>';
+  } else {
+    var stLbl = { new:"חדש", talking:"בשיחה", quoted:"הצעה נשלחה", won:"נסגר ✓", lost:"לא רלוונטי" };
+    var rows = D.leads.map(function(l){
+      return "<tr><td>"+l.date+"</td><td><b>"+l.name+"</b></td><td>"+l.source+"</td><td>"+l.type+
+             '</td><td><span class="badge st-'+l.status+'">'+(stLbl[l.status]||l.status)+"</span></td><td>"+(l.note||"")+"</td></tr>";
+    }).join("");
+    holder.innerHTML = "<table><thead><tr><th>תאריך</th><th>שם</th><th>מקור</th><th>סוג</th><th>סטטוס</th><th>הערה</th></tr></thead><tbody>"+rows+"</tbody></table>";
+  }
+
+  /* Checklist */
+  document.getElementById("checklist").innerHTML = D.checklist.map(function(c){
+    return '<li class="'+(c.done?"done":"")+'"><span class="box">'+(c.done?"✓":"")+"</span><span>"+c.label+"</span></li>";
+  }).join("");
+
+  /* Charts */
+  Chart.defaults.color = "#a7a4c4";
+  Chart.defaults.borderColor = "rgba(255,255,255,.08)";
+  Chart.defaults.font.family = "Heebo";
+
+  var palette = ["#8b5cf6","#22d3ee","#f472b6","#f5d782","#34d399"];
+  var weeks = [];
+  D.rankings.forEach(function(r){ r.history.forEach(function(h){ if(weeks.indexOf(h.week)<0) weeks.push(h.week); }); });
+  weeks.sort();
+  new Chart(document.getElementById("rankChart"), {
+    type: "line",
+    data: {
+      labels: weeks,
+      datasets: D.rankings.map(function(r,i){
+        return {
+          label: r.keyword,
+          data: weeks.map(function(w){
+            var pt = r.history.filter(function(h){ return h.week===w; })[0];
+            return pt ? pt.position : null;
+          }),
+          borderColor: palette[i%palette.length], backgroundColor: palette[i%palette.length],
+          tension:.35, spanGaps:true, pointRadius:4
+        };
+      })
+    },
+    options: {
+      scales: { y: { reverse:true, min:1, suggestedMax:50, title:{display:true,text:"מיקום בגוגל"} } },
+      plugins: { legend: { position:"bottom", labels:{ boxWidth:12 } } }
+    }
+  });
+
+  new Chart(document.getElementById("trafficChart"), {
+    type: "bar",
+    data: {
+      labels: D.traffic.map(function(t){ return t.week; }),
+      datasets: [
+        { label:"חשיפות", data:D.traffic.map(function(t){return t.impressions;}), backgroundColor:"rgba(139,92,246,.55)", borderRadius:6 },
+        { label:"קליקים", data:D.traffic.map(function(t){return t.clicks;}), backgroundColor:"rgba(34,211,238,.75)", borderRadius:6 }
+      ]
+    },
+    options: { plugins: { legend: { position:"bottom", labels:{ boxWidth:12 } } } }
+  });
+})();
+</script>
+</body>
+</html>
