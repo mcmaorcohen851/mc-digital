@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" font-family="Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#14122a"/><stop offset="1" stop-color="#0c0a18"/>
+    </linearGradient>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="640" height="400" fill="url(#bg)"/>
+  <circle cx="540" cy="60" r="140" fill="#8b5cf6" opacity=".12"/>
+  <circle cx="80" cy="360" r="120" fill="#22d3ee" opacity=".10"/>
+
+  <!-- phone frame -->
+  <rect x="240" y="38" width="160" height="324" rx="24" fill="#0a0918" stroke="url(#g)" stroke-width="3"/>
+  <rect x="252" y="62" width="136" height="276" rx="10" fill="#0f0d20"/>
+  <rect x="290" y="48" width="60" height="7" rx="3.5" fill="#1e1b38"/>
+
+  <!-- shield -->
+  <g filter="url(#glow)">
+    <path d="M320 92 l40 14 v34 c0 30 -18 48 -40 58 c-22 -10 -40 -28 -40 -58 v-34 z" fill="none" stroke="#22d3ee" stroke-width="4"/>
+    <path d="M304 142 l12 12 l22 -26" fill="none" stroke="#22d3ee" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- chat rows with alert -->
+  <rect x="264" y="222" width="112" height="22" rx="8" fill="#1c1936"/>
+  <circle cx="276" cy="233" r="6" fill="#8b5cf6"/>
+  <rect x="288" y="228" width="70" height="4" rx="2" fill="#3f3a6e"/>
+  <rect x="288" y="236" width="48" height="4" rx="2" fill="#2c2852"/>
+
+  <rect x="264" y="252" width="112" height="22" rx="8" fill="#2a1230" stroke="#f472b6" stroke-width="1.5"/>
+  <circle cx="276" cy="263" r="6" fill="#f472b6"/>
+  <rect x="288" y="258" width="70" height="4" rx="2" fill="#7e3f68"/>
+  <rect x="288" y="266" width="55" height="4" rx="2" fill="#5c2e4d"/>
+  <text x="370" y="267" font-size="11" fill="#f472b6" text-anchor="end">⚠</text>
+
+  <rect x="264" y="282" width="112" height="22" rx="8" fill="#1c1936"/>
+  <circle cx="276" cy="293" r="6" fill="#22d3ee"/>
+  <rect x="288" y="288" width="62" height="4" rx="2" fill="#3f3a6e"/>
+  <rect x="288" y="296" width="44" height="4" rx="2" fill="#2c2852"/>
+
+  <!-- floating alert card -->
+  <g transform="translate(430 120)">
+    <rect width="150" height="64" rx="12" fill="#0f0d20" stroke="#f472b6" stroke-width="2"/>
+    <circle cx="24" cy="32" r="12" fill="#f472b6" opacity=".25"/>
+    <text x="24" y="37" font-size="14" text-anchor="middle" fill="#f472b6">!</text>
+    <text x="44" y="28" font-size="12" font-weight="bold" fill="#f4f3fb">התראת AI</text>
+    <text x="44" y="46" font-size="10" fill="#a7a4c4">זוהתה הודעה חריגה</text>
+  </g>
+
+  <!-- AI badge -->
+  <g transform="translate(70 100)">
+    <rect width="120" height="44" rx="22" fill="#0f0d20" stroke="url(#g)" stroke-width="2"/>
+    <text x="60" y="28" font-size="16" font-weight="bold" text-anchor="middle" fill="#22d3ee">AI ✦ 24/7</text>
+  </g>
+
+  <text x="320" y="386" font-size="15" font-weight="bold" text-anchor="middle" fill="#8b5cf6">SafeNet IL — הגנת ילדים חכמה</text>
+</svg>
