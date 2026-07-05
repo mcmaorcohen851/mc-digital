@@ -101,11 +101,17 @@
     </div>
   </div>
 
+  <div class="card">
+    <h2>ביטויי החיפוש שהובילו אליך (Search Console)</h2>
+    <div id="queries-holder"></div>
+    <p class="note" id="gsc-status"></p>
+  </div>
+
   <div class="grid2">
     <div class="card">
       <h2>מיקומים בגוגל (מילות מפתח)</h2>
       <canvas id="rankChart"></canvas>
-      <p class="note">ציר Y הפוך — נמוך יותר = מיקום טוב יותר. הסוכן השבועי מעדכן אחרי חיבור Search Console.</p>
+      <p class="note">ציר Y הפוך — נמוך יותר = מיקום טוב יותר. מתעדכן אוטומטית מ-Search Console.</p>
     </div>
     <div class="card">
       <h2>תנועה שבועית (חשיפות / קליקים)</h2>
@@ -128,11 +134,32 @@
   <footer>MC Digital · הדשבורד פרטי (noindex) · לעדכון נתונים: dashboard/data.js</footer>
 </div>
 
+<script src="gsc-data.js"></script>
 <script src="data.js"></script>
 <script>
 (function(){
   var D = window.DASH;
-  document.getElementById("updated").textContent = D.updated;
+  var G = window.GSC || { updated: null, topQueries: [], rankings: [], traffic: [] };
+  var gscLive = !!G.updated;
+  // מקורות הגרפים: נתוני GSC אם חוברו, אחרת נתוני ברירת המחדל מ-data.js
+  var RANKINGS = (gscLive && G.rankings && G.rankings.length) ? G.rankings : D.rankings;
+  var TRAFFIC  = (gscLive && G.traffic && G.traffic.length)  ? G.traffic  : D.traffic;
+  document.getElementById("updated").textContent = gscLive ? (D.updated + " · GSC: " + G.updated) : D.updated;
+
+  /* ביטויי חיפוש (Search Console) */
+  var qh = document.getElementById("queries-holder");
+  var gscStatus = document.getElementById("gsc-status");
+  if (gscLive && G.topQueries && G.topQueries.length) {
+    var qrows = G.topQueries.map(function(q){
+      return "<tr><td><b>"+q.query+"</b></td><td>"+q.impressions+"</td><td>"+q.clicks+
+             "</td><td>"+q.ctr+"%</td><td>"+q.position+"</td></tr>";
+    }).join("");
+    qh.innerHTML = "<table><thead><tr><th>ביטוי חיפוש</th><th>חשיפות</th><th>קליקים</th><th>CTR</th><th>מיקום ממוצע</th></tr></thead><tbody>"+qrows+"</tbody></table>";
+    gscStatus.textContent = "מוצגים " + G.topQueries.length + " הביטויים המובילים ב-28 הימים האחרונים. מיקום נמוך = טוב יותר.";
+  } else {
+    qh.innerHTML = '<div class="empty">טרם חובר ל-Search Console — הנתונים יופיעו כאן אוטומטית תוך כמה ימים מהחיבור.<br>הוראות חיבור: <code>scripts/README.md</code></div>';
+    gscStatus.textContent = "";
+  }
 
   /* KPIs */
   var count = function(st){ return D.leads.filter(function(l){ return l.status===st; }).length; };
@@ -166,13 +193,12 @@
 
   var palette = ["#8b5cf6","#22d3ee","#f472b6","#f5d782","#34d399"];
   var weeks = [];
-  D.rankings.forEach(function(r){ r.history.forEach(function(h){ if(weeks.indexOf(h.week)<0) weeks.push(h.week); }); });
-  weeks.sort();
+  RANKINGS.forEach(function(r){ r.history.forEach(function(h){ if(weeks.indexOf(h.week)<0) weeks.push(h.week); }); });
   new Chart(document.getElementById("rankChart"), {
     type: "line",
     data: {
       labels: weeks,
-      datasets: D.rankings.map(function(r,i){
+      datasets: RANKINGS.map(function(r,i){
         return {
           label: r.keyword,
           data: weeks.map(function(w){
@@ -193,10 +219,10 @@
   new Chart(document.getElementById("trafficChart"), {
     type: "bar",
     data: {
-      labels: D.traffic.map(function(t){ return t.week; }),
+      labels: TRAFFIC.map(function(t){ return t.week; }),
       datasets: [
-        { label:"חשיפות", data:D.traffic.map(function(t){return t.impressions;}), backgroundColor:"rgba(139,92,246,.55)", borderRadius:6 },
-        { label:"קליקים", data:D.traffic.map(function(t){return t.clicks;}), backgroundColor:"rgba(34,211,238,.75)", borderRadius:6 }
+        { label:"חשיפות", data:TRAFFIC.map(function(t){return t.impressions;}), backgroundColor:"rgba(139,92,246,.55)", borderRadius:6 },
+        { label:"קליקים", data:TRAFFIC.map(function(t){return t.clicks;}), backgroundColor:"rgba(34,211,238,.75)", borderRadius:6 }
       ]
     },
     options: { plugins: { legend: { position:"bottom", labels:{ boxWidth:12 } } } }

@@ -1,0 +1,14 @@
+{
+  "name": "mc-digital-gsc-sync",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "משיכת נתוני Google Search Console אל דשבורד MC Digital",
+  "scripts": {
+    "sync": "node sync-gsc.mjs",
+    "demo": "node sync-gsc.mjs --demo"
+  },
+  "dependencies": {
+    "googleapis": "^144.0.0"
+  }
+}
