@@ -1,0 +1,10 @@
+# MC Digital — אתר סטטי (ללא build). מתאים ל-Netlify.
+[build]
+  publish = "."
+  command = ""
+
+# הפניית /dashboard ללא סיומת
+[[redirects]]
+  from = "/dashboard"
+  to = "/dashboard/index.html"
+  status = 200
