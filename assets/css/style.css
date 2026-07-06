@@ -304,7 +304,7 @@ section { padding-block: 5rem; position: relative; }
 .site-footer { border-top: 1px solid var(--border); padding-block: 2.2rem; background: rgba(255,255,255,.02); }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
 .footer-inner .muted { color: var(--muted); font-size: .88rem; }
-.footer-links { display: flex; gap: 1.4rem; }
+.footer-links { display: flex; gap: 1.4rem; flex-wrap: wrap; }
 .footer-links a { color: var(--muted); font-size: .9rem; font-weight: 600; }
 .footer-links a:hover { color: var(--text); }
 
@@ -346,6 +346,9 @@ section { padding-block: 5rem; position: relative; }
   .hero { min-height: auto; padding-block: 3.5rem 2.5rem; }
   .hero-stats { gap: 1.6rem; }
   .wa-float { width: 54px; height: 54px; }
+  /* פוטר — ממרכזים ומאפשרים גלישה לשורות במסך צר */
+  .footer-inner { flex-direction: column; text-align: center; gap: 1rem; }
+  .footer-links { justify-content: center; gap: .9rem 1.1rem; }
 }
 
 /* ---------- Inner pages (service / faq / about) ---------- */
