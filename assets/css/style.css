@@ -27,13 +27,16 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
 body {
   font-family: var(--font);
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -125,12 +128,12 @@ section { padding-block: 5rem; position: relative; }
 /* Tron grid floor behind hero visual */
 .hero-grid {
   position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none;
-  perspective: 400px;
+  perspective: 400px; contain: paint;
   mask-image: linear-gradient(to bottom, transparent, #000 35%, #000 75%, transparent);
   -webkit-mask-image: linear-gradient(to bottom, transparent, #000 35%, #000 75%, transparent);
 }
 .hero-grid::before {
-  content: ""; position: absolute; left: -50%; right: -50%; bottom: -12%; height: 170%;
+  content: ""; position: absolute; left: -20%; right: -20%; bottom: -12%; height: 170%;
   background-image:
     linear-gradient(rgba(139,92,246,.28) 1px, transparent 1px),
     linear-gradient(90deg, rgba(34,211,238,.22) 1px, transparent 1px);
