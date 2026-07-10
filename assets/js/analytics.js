@@ -10,7 +10,7 @@
 (function () {
   "use strict";
 
-  var CLARITY_ID = "";  // ← הדבק כאן את מזהה ה-Clarity (מפת חום + כניסות)
+  var CLARITY_ID = "xkakzpuo6x";  // ← מזהה ה-Clarity (מפת חום + כניסות) — פעיל
   var GA_ID = "";       // ← הדבק כאן את מזהה ה-GA4 (אופציונלי)
 
   /* ---- Microsoft Clarity — מפת חום, הקלטות, מבקרים ---- */
