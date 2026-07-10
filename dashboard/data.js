@@ -38,6 +38,7 @@ window.DASH = {
     { label: "Google Search Console — אימות האתר", done: true },
     { label: "הגשת sitemap + בקשת אינדוקס לעמוד הבית", done: true },
     { label: "חיבור GSC לדשבורד (חשבון שירות) — ראה scripts/README.md", done: false },
+    { label: "Microsoft Clarity — מפת חום + מבקרים (הדבק CLARITY_ID ב-analytics.js)", done: false },
     { label: "Google Business Profile", done: false },
     { label: "פרופיל XPlace + Freelancerim עם קישור", done: false },
     { label: "הודעת השקה ל-30 אנשי קשר (תבנית 1)", done: false },
