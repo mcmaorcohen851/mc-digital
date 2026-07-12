@@ -34,7 +34,7 @@ window.DASH = {
   checklist: [
     { label: "האתר באוויר (GitHub Pages)", done: true },
     { label: "אימות טופס FormSubmit (מייל אימות בשליחה הראשונה)", done: false },
-    { label: "Google Analytics — יצירת נכס GA4 והדבקת ה-ID", done: false },
+    { label: "Google Analytics — GA4 פעיל ✓", done: true },
     { label: "Google Search Console — אימות האתר", done: true },
     { label: "הגשת sitemap + בקשת אינדוקס לעמוד הבית", done: true },
     { label: "חיבור GSC לדשבורד (חשבון שירות) — ראה scripts/README.md", done: false },
