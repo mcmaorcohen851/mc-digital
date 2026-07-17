@@ -8,7 +8,7 @@
   </url>
   <url>
     <loc>https://mcmaorcohen851.github.io/mc-digital/website-design.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -44,7 +44,7 @@
   </url>
   <url>
     <loc>https://mcmaorcohen851.github.io/mc-digital/faq.html</loc>
-    <lastmod>2026-07-04</lastmod>
+    <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -59,5 +59,11 @@
     <lastmod>2026-07-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://mcmaorcohen851.github.io/mc-digital/blog/kama-ole-livnot-atar-le-esek-2026.html</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

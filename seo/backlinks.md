@@ -1,11 +1,11 @@
 # MC Digital — צ'קליסט קישורים נכנסים ונוכחות (הכול בחינם)
 
-עדכון אחרון: 2026-07-04
+עדכון אחרון: 2026-07-17
 
 ## קריטי — דורש פעולה של מאור (חשבונות אישיים)
 | פעולה | קישור | סטטוס | הערות |
 |---|---|---|---|
-| Google Search Console — אימות האתר | https://search.google.com/search-console | ⏳ | להוסיף property של כתובת האתר, אימות בקובץ HTML או meta tag (הסוכן יוסיף) |
+| Google Search Console — אימות האתר | https://search.google.com/search-console | ✅ | מאומת (googleabfa2fb2a45b37cf.html בשורש), sitemap הוגש. חסר עדיין: חיבור חשבון שירות לסנכרון אוטומטי לדשבורד — ראה scripts/README.md |
 | Google Business Profile | https://business.google.com | ⏳ | "MC Digital — בניית אתרים ואפליקציות". הכי משפיע על חיפושים מקומיים |
 | Bing Webmaster Tools | https://www.bing.com/webmasters | ⏳ | ייבוא אוטומטי מ-GSC בקליק |
 | פרופיל XPlace עם קישור לאתר | https://www.xplace.com | ⏳ | פרופיל חינם + קישור = ליד + באקלינק |
