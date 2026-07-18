@@ -81,7 +81,7 @@ section { padding-block: 5rem; position: relative; }
 }
 .nav { display: flex; align-items: center; gap: 1.5rem; padding-block: .85rem; }
 .logo { font-weight: 900; font-size: 1.45rem; letter-spacing: .5px; display: flex; align-items: center; gap: .55rem; direction: ltr; }
-.logo .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--grad); box-shadow: 0 0 16px var(--cyan); animation: dotPulse 2.4s ease-in-out infinite; }
+.logo .dot { width: 20px; height: 20px; border-radius: 6px; background: var(--grad); box-shadow: 0 0 16px var(--cyan), 0 0 0 1.5px rgba(255,255,255,.16) inset; animation: dotPulse 2.4s ease-in-out infinite; }
 @keyframes dotPulse { 50% { box-shadow: 0 0 26px var(--cyan), 0 0 6px var(--violet); } }
 .nav-links { display: flex; gap: 1.5rem; margin-inline-start: auto; align-items: center; }
 .nav-links a { color: var(--muted); font-weight: 600; transition: color .2s; font-size: .98rem; }
