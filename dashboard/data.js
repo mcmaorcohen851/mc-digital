@@ -5,7 +5,7 @@
    ============================================================ */
 
 window.DASH = {
-  updated: "2026-07-04",
+  updated: "2026-08-25",
 
   /* ---------- פניות (לידים) ----------
      status: new | talking | quoted | won | lost              */
@@ -21,7 +21,9 @@ window.DASH = {
     { keyword: "בניית אתר תדמית לעסק קטן", history: [{ week: "2026-07-04", position: null }] },
     { keyword: "בניית אתר עם AI",           history: [{ week: "2026-07-04", position: null }] },
     { keyword: "סטודיו דיגיטלי לעסקים",     history: [{ week: "2026-07-04", position: null }] },
-    { keyword: "פיתוח אפליקציה לעסק קטן",   history: [{ week: "2026-07-04", position: null }] }
+    { keyword: "פיתוח אפליקציה לעסק קטן",   history: [{ week: "2026-07-04", position: null }] },
+    { keyword: "קמפיין פייסבוק לעסק קטן",   history: [{ week: "2026-08-25", position: null }] },
+    { keyword: "בניית חנות אונליין וורדפרס", history: [{ week: "2026-08-25", position: null }] }
   ],
 
   /* ---------- תנועה שבועית ----------
