@@ -202,6 +202,8 @@ section { padding-block: 5rem; position: relative; }
 .work-body h3 { font-size: 1.18rem; font-weight: 800; }
 .work-body p { color: var(--muted); font-size: .92rem; flex: 1; }
 .chip-row { display: flex; gap: .45rem; flex-wrap: wrap; margin-top: .4rem; }
+.work-link { display: inline-flex; align-items: center; gap: .3rem; margin-top: .3rem; font-size: .88rem; font-weight: 700; color: var(--cyan); text-decoration: none; transition: gap .2s ease, color .2s ease; width: fit-content; }
+.work-link:hover { gap: .55rem; color: var(--violet); }
 .chip {
   font-size: .72rem; font-weight: 700; color: var(--cyan);
   background: rgba(34,211,238,.09); border: 1px solid rgba(34,211,238,.25);

@@ -122,7 +122,8 @@
       desc: "קטלוג אונליין מלא למדבקות רכב בהתאמה אישית: מאות מוצרים, סינון לפי דגם רכב, עגלת קניות והכנה מלאה למעבר ל-WooCommerce.",
       tech: ["HTML/CSS/JS", "WooCommerce", "SEO"],
       img: "assets/img/projects/shai-sabag-live.jpg",
-      alt: "חנות המדבקות של שי סבג — עמוד הבית של הקטלוג"
+      alt: "חנות המדבקות של שי סבג — עמוד הבית של הקטלוג",
+      link: "https://shai-sabag-coatings.netlify.app"
     },
     {
       id: "luxora",
@@ -176,6 +177,7 @@
             "<h3>" + p.name + "</h3>" +
             "<p>" + p.desc + "</p>" +
             '<div class="chip-row">' + p.tech.map(function (t) { return '<span class="chip">' + t + "</span>"; }).join("") + "</div>" +
+            (p.link ? '<a class="work-link" href="' + p.link + '" target="_blank" rel="noopener">צפייה בהדגמה החיה ←</a>' : "") +
           "</div>" +
         "</article>";
     });
