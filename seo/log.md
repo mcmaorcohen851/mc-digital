@@ -10,9 +10,9 @@
 - `blog/wordpress-o-atar-bekod.html` — "וורדפרס או אתר בקוד — מה עדיף לעסק קטן". BlogPosting + FAQPage (4) + BreadcrumbList. 2 טבלאות. מקשר לפילר ×2 ולאחים.
 - `blog/lama-atar-lo-mofia-google.html` — "למה האתר שלי לא מופיע בגוגל — 9 סיבות". מדריך אבחון עם תיבת בדיקת `site:` מעל הקיפול. BlogPosting + FAQPage (4) + BreadcrumbList.
 
-**3. נכס לינקבילי — כלי חינמי:**
-- `schema-generator.html` — מחולל Schema (JSON-LD) לעסקים בישראל. Client-side מלא, בלי backend. מייצר LocalBusiness/ProfessionalService (9 סוגים), Service, FAQPage (בנאי דינמי), BreadcrumbList. שדות ישראליים (ח.פ מרומז, אזור שירות, פרסינג שעות עברית→openingHoursSpecification, טלפון→+972). כפתור העתקה + הורדה. WebApplication schema. אומת בדפדפן — הפלט נוצר תקין.
-- **הבא בתור לנכס:** מחשבון עלות אתר/אפליקציה אינטראקטיבי (קיים גרסה ב-mc-digital.vercel.app — לשקול פורט).
+**3. שני נכסים לינקביליים — כלים חינמיים:**
+- `schema-generator.html` — מחולל Schema (JSON-LD) לעסקים בישראל. Client-side מלא, בלי backend. מייצר LocalBusiness/ProfessionalService (9 סוגים), Service, FAQPage (בנאי דינמי), BreadcrumbList. שדות ישראליים (אזור שירות, פרסינג שעות עברית→openingHoursSpecification, טלפון→+972). כפתור העתקה + הורדה. WebApplication schema. אומת בדפדפן — הפלט נוצר תקין.
+- `machshevon-alut-atar.html` — מחשבון עלות בניית אתר/אפליקציה. Client-side. 5 סוגי פרויקט × עמודים × רמת עיצוב × 7 אינטגרציות → טווח מחיר + לוח זמנים + deep-link וואטסאפ עם סיכום הבחירות. WebApplication+FAQPage schema. מקושר מהפילר (סעיף מחיר + פוטר), מ-blog/kama-ole, ומהפוטר בכל העמודים. אומת בדפדפן.
 
 **4. קישוריות פנימית:**
 - עמוד הבית: קישור לפילר מסקשן השירותים.

@@ -31,6 +31,7 @@ MC Digital הוא סטודיו דיגיטלי המתמחה בהקמת נוכחו
 - [בניית אתרים לעסקים — המדריך המלא 2026](https://mcmaorcohen851.github.io/mc-digital/bniyat-atarim-le-asakim.html): עמוד העוגן המרכז את כל ההחלטות בבניית אתר לעסק — סוגי אתרים ומחירים, וורדפרס מול קוד, שלבי עבודה, SEO טכני, טעויות וצ'קליסט.
 
 ## כלים חינמיים
+- [מחשבון עלות בניית אתר ואפליקציה](https://mcmaorcohen851.github.io/mc-digital/machshevon-alut-atar.html): כלי חינמי להערכת טווח מחיר ולוח זמנים לפרויקט — לפי סוג אתר, מספר עמודים, רמת עיצוב ואינטגרציות. בלי הרשמה.
 - [מחולל Schema (JSON-LD) לעסקים בישראל](https://mcmaorcohen851.github.io/mc-digital/schema-generator.html): כלי חינמי בעברית ליצירת קוד נתונים מובנים — LocalBusiness, Service, FAQPage, BreadcrumbList — עם שדות ישראליים ופלט מוכן להעתקה.
 
 ## בלוג — מדריכים
