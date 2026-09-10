@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>מחולל Schema (JSON-LD) לעסקים בישראל — חינם, בעברית | MC Digital</title>
+  <meta name="description" content="כלי חינמי ליצירת קוד Schema.org (JSON-LD) לעסק מקומי בישראל: LocalBusiness, שירות, שאלות נפוצות (FAQ) ופירורי לחם. ממשק בעברית, שדות ישראליים, פלט מוכן להעתקה לתוך האתר.">
+  <meta name="keywords" content="מחולל Schema, JSON-LD, נתונים מובנים, Schema.org בעברית, LocalBusiness schema, FAQ schema, SEO טכני">
+  <meta name="author" content="Maor Cohen — MC Digital">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://mcmaorcohen851.github.io/mc-digital/schema-generator.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="he_IL">
+  <meta property="og:site_name" content="MC Digital">
+  <meta property="og:title" content="מחולל Schema (JSON-LD) לעסקים בישראל — חינם, בעברית">
+  <meta property="og:description" content="יוצרים קוד נתונים מובנים לעסק מקומי בדקה: LocalBusiness, שירות, FAQ ופירורי לחם. פלט מוכן להעתקה.">
+  <meta property="og:url" content="https://mcmaorcohen851.github.io/mc-digital/schema-generator.html">
+  <meta property="og:image" content="https://mcmaorcohen851.github.io/mc-digital/assets/img/og-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="מחולל Schema לעסקים בישראל — בעברית">
+  <meta name="twitter:description" content="LocalBusiness, שירות, FAQ ופירורי לחם — פלט JSON-LD מוכן להעתקה.">
+  <meta name="twitter:image" content="https://mcmaorcohen851.github.io/mc-digital/assets/img/og-cover.png">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/fx.css">
+  <script src="assets/js/analytics.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "מחולל Schema (JSON-LD) לעסקים בישראל",
+        "url": "https://mcmaorcohen851.github.io/mc-digital/schema-generator.html",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "inLanguage": "he",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "ILS" },
+        "publisher": { "@id": "https://mcmaorcohen851.github.io/mc-digital/#business" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "בית", "item": "https://mcmaorcohen851.github.io/mc-digital/" },
+          { "@type": "ListItem", "position": 2, "name": "מחולל Schema", "item": "https://mcmaorcohen851.github.io/mc-digital/schema-generator.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    .tool-wrap { max-width: 960px; margin-inline: auto; }
+    .tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start; }
+    @media (max-width: 820px) { .tool-grid { grid-template-columns: 1fr; } }
+    .tool-panel { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 1.4rem; }
+    .tool-panel h2 { font-size: 1.15rem; font-weight: 900; margin-bottom: 1rem; }
+    .fld { margin-bottom: .9rem; }
+    .fld label { display: block; font-size: .85rem; font-weight: 700; margin-bottom: .35rem; color: var(--text); }
+    .fld input, .fld select, .fld textarea {
+      width: 100%; background: #0c0a18; border: 1px solid var(--border); border-radius: 10px;
+      padding: .6rem .75rem; color: var(--text); font: inherit; font-size: .92rem;
+    }
+    .fld input:focus, .fld select:focus, .fld textarea:focus { outline: 2px solid var(--cyan); outline-offset: 1px; }
+    .fld textarea { min-height: 66px; resize: vertical; }
+    .fld .hint { font-size: .76rem; color: var(--muted); margin-top: .25rem; }
+    .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; }
+    @media (max-width: 480px) { .row2 { grid-template-columns: 1fr; } }
+    fieldset { border: 1px dashed var(--border); border-radius: 12px; padding: .9rem; margin-bottom: 1rem; }
+    fieldset legend { font-size: .82rem; font-weight: 800; padding-inline: .5rem; color: var(--cyan); }
+    .toggle-line { display: flex; align-items: center; gap: .55rem; margin-bottom: .8rem; font-size: .9rem; font-weight: 700; }
+    .toggle-line input { width: auto; }
+    .faq-pair { border: 1px solid var(--border); border-radius: 10px; padding: .7rem; margin-bottom: .6rem; position: relative; }
+    .btn-mini { background: transparent; border: 1px solid var(--border); color: var(--text); border-radius: 8px; padding: .35rem .7rem; font: inherit; font-size: .82rem; font-weight: 700; cursor: pointer; }
+    .btn-mini:hover { border-color: var(--cyan); color: var(--cyan); }
+    .btn-rm { position: absolute; inset-inline-end: .5rem; inset-block-start: .5rem; }
+    .out-box { background: #0c0a18; border: 1px solid var(--border); border-radius: 12px; padding: 1rem; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: .78rem; line-height: 1.55; color: #d6f5ff; white-space: pre-wrap; word-break: break-word; max-height: 460px; overflow: auto; direction: ltr; text-align: left; }
+    .out-actions { display: flex; gap: .6rem; margin-top: .8rem; flex-wrap: wrap; }
+    .copied { color: var(--cyan); font-weight: 700; font-size: .85rem; align-self: center; }
+    .steps { counter-reset: s; margin: 0; padding: 0; list-style: none; }
+    .steps li { counter-increment: s; padding-inline-start: 2rem; position: relative; margin-bottom: .5rem; color: #cbc9e2; }
+    .steps li::before { content: counter(s); position: absolute; inset-inline-start: 0; top: 0; width: 1.4rem; height: 1.4rem; background: var(--grad); color: #08060f; border-radius: 50%; display: grid; place-items: center; font-size: .78rem; font-weight: 900; }
+  </style>
+</head>
+<body>
+  <div class="fx-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="ניווט ראשי">
+      <a href="index.html" class="logo"><span class="dot"></span>MC&nbsp;<b class="g">Digital</b></a>
+      <button class="nav-toggle" aria-label="פתיחת תפריט" aria-expanded="false">☰</button>
+      <div class="nav-links">
+        <a href="index.html">בית</a>
+        <a href="index.html#services">שירותים</a>
+        <a href="portfolio.html">תיק עבודות</a>
+        <a href="faq.html">שאלות ותשובות</a>
+        <a href="blog/index.html">בלוג</a>
+        <a href="about.html">אודות</a>
+        <a href="index.html#contact" class="btn btn-grad nav-cta">דברו איתי</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap">
+        <nav class="breadcrumb" aria-label="פירורי לחם">
+          <a href="index.html">בית</a><span>מחולל Schema</span>
+        </nav>
+        <h1>מחולל <span class="g">Schema (JSON-LD)</span> לעסקים בישראל</h1>
+        <p class="sub">ממלאים את הפרטים, מקבלים קוד נתונים מובנים מוכן להדבקה ב-<code>&lt;head&gt;</code> של האתר. חינם, בלי הרשמה, רץ במלואו בדפדפן שלכם.</p>
+      </div>
+    </section>
+
+    <section style="padding-block:1rem 4rem">
+      <div class="wrap tool-wrap">
+        <div class="tool-grid">
+          <!-- טופס -->
+          <div class="tool-panel">
+            <h2>פרטי העסק</h2>
+            <form id="sform">
+              <fieldset>
+                <legend>עסק מקומי (LocalBusiness)</legend>
+                <div class="fld">
+                  <label for="bizName">שם העסק *</label>
+                  <input id="bizName" type="text" value="MC Digital" required>
+                </div>
+                <div class="fld">
+                  <label for="bizType">סוג עסק (Schema type)</label>
+                  <select id="bizType">
+                    <option value="LocalBusiness">עסק מקומי כללי</option>
+                    <option value="ProfessionalService" selected>שירות מקצועי</option>
+                    <option value="Store">חנות</option>
+                    <option value="Restaurant">מסעדה / בית קפה</option>
+                    <option value="HealthAndBeautyBusiness">יופי ובריאות</option>
+                    <option value="HomeAndConstructionBusiness">בנייה ושיפוצים</option>
+                    <option value="AutoRepair">מוסך / רכב</option>
+                    <option value="LegalService">שירות משפטי</option>
+                    <option value="Dentist">מרפאת שיניים</option>
+                  </select>
+                </div>
+                <div class="fld">
+                  <label for="bizDesc">תיאור קצר</label>
+                  <textarea id="bizDesc">סטודיו דיגיטלי לבניית אתרים, אפליקציות ואוטומציות AI לעסקים.</textarea>
+                </div>
+                <div class="fld">
+                  <label for="bizUrl">כתובת האתר *</label>
+                  <input id="bizUrl" type="url" value="https://mcmaorcohen851.github.io/mc-digital/" required>
+                </div>
+                <div class="row2">
+                  <div class="fld">
+                    <label for="bizPhone">טלפון</label>
+                    <input id="bizPhone" type="tel" value="054-805-8710" placeholder="03-1234567">
+                  </div>
+                  <div class="fld">
+                    <label for="bizEmail">אימייל</label>
+                    <input id="bizEmail" type="email" value="mcmaorcohen851@gmail.com">
+                  </div>
+                </div>
+                <div class="fld">
+                  <label for="bizImage">קישור ללוגו / תמונה (URL)</label>
+                  <input id="bizImage" type="url" value="https://mcmaorcohen851.github.io/mc-digital/assets/img/og-cover.png">
+                </div>
+
+                <div class="toggle-line">
+                  <input type="checkbox" id="hasAddr">
+                  <label for="hasAddr" style="margin:0">יש כתובת פיזית לקבלת קהל</label>
+                </div>
+                <div id="addrBlock" hidden>
+                  <div class="fld"><label for="aStreet">רחוב ומספר</label><input id="aStreet" type="text" placeholder="הרצל 10"></div>
+                  <div class="row2">
+                    <div class="fld"><label for="aCity">עיר</label><input id="aCity" type="text" placeholder="תל אביב"></div>
+                    <div class="fld"><label for="aZip">מיקוד</label><input id="aZip" type="text" placeholder="6100000"></div>
+                  </div>
+                </div>
+
+                <div class="toggle-line">
+                  <input type="checkbox" id="hasArea" checked>
+                  <label for="hasArea" style="margin:0">עסק בפריסת אזור שירות</label>
+                </div>
+                <div class="fld" id="areaBlock">
+                  <label for="areaServed">אזור שירות</label>
+                  <input id="areaServed" type="text" value="ישראל">
+                  <div class="hint">אפשר כמה, מופרד בפסיקים: "תל אביב, מרכז, שרון"</div>
+                </div>
+
+                <div class="fld">
+                  <label for="bizHours">שעות פעילות</label>
+                  <input id="bizHours" type="text" placeholder="א׳-ה׳ 09:00-18:00">
+                  <div class="hint">טקסט חופשי — יומר ל-openingHours תקני כשאפשר</div>
+                </div>
+                <div class="fld">
+                  <label for="bizSocial">קישורי רשתות / פרופילים (sameAs)</label>
+                  <textarea id="bizSocial" placeholder="כתובת בכל שורה"></textarea>
+                  <div class="hint">פייסבוק, אינסטגרם, לינקדאין, פרופיל Google — כתובת אחת בכל שורה</div>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>שירות (Service) — אופציונלי</legend>
+                <div class="toggle-line">
+                  <input type="checkbox" id="hasService">
+                  <label for="hasService" style="margin:0">להוסיף סכמת שירות</label>
+                </div>
+                <div id="serviceBlock" hidden>
+                  <div class="fld"><label for="svcName">שם השירות</label><input id="svcName" type="text" placeholder="בניית אתרים לעסקים"></div>
+                  <div class="fld"><label for="svcDesc">תיאור השירות</label><textarea id="svcDesc" placeholder="בניית אתרי תדמית מהירים עם SEO מובנה"></textarea></div>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>שאלות נפוצות (FAQPage) — אופציונלי</legend>
+                <div class="toggle-line">
+                  <input type="checkbox" id="hasFaq">
+                  <label for="hasFaq" style="margin:0">להוסיף סכמת שאלות ותשובות</label>
+                </div>
+                <div id="faqBlock" hidden>
+                  <div id="faqList"></div>
+                  <button type="button" class="btn-mini" id="addFaq">+ הוספת שאלה</button>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>פירורי לחם (BreadcrumbList) — אופציונלי</legend>
+                <div class="toggle-line">
+                  <input type="checkbox" id="hasCrumb">
+                  <label for="hasCrumb" style="margin:0">להוסיף סכמת פירורי לחם</label>
+                </div>
+                <div id="crumbBlock" hidden>
+                  <div class="fld">
+                    <label for="crumbs">נתיב (שם | כתובת בכל שורה)</label>
+                    <textarea id="crumbs" placeholder="בית | https://example.co.il/&#10;שירותים | https://example.co.il/services"></textarea>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+
+          <!-- פלט -->
+          <div class="tool-panel">
+            <h2>הקוד שנוצר</h2>
+            <div class="out-box" id="output" aria-live="polite">&lt;!-- מלאו את הטופס וקוד ה-JSON-LD יופיע כאן --&gt;</div>
+            <div class="out-actions">
+              <button type="button" class="btn btn-grad" id="copyBtn">העתקת הקוד</button>
+              <button type="button" class="btn-mini" id="dlBtn">הורדה כקובץ</button>
+              <span class="copied" id="copiedMsg" hidden>הועתק ✓</span>
+            </div>
+            <div class="hl" style="margin-top:1.2rem">
+              <strong>איך משתמשים:</strong>
+              <ol class="steps" style="margin-top:.6rem">
+                <li>מעתיקים את הקוד המלא (כולל תגי <code>&lt;script&gt;</code>).</li>
+                <li>מדביקים בתוך ה-<code>&lt;head&gt;</code> של העמוד הרלוונטי.</li>
+                <li>בודקים בכלי <a href="https://search.google.com/test/rich-results" target="_blank" rel="noopener">Rich Results Test</a> של גוגל.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="prose" style="margin-top:2.5rem">
+          <h2>למה בכלל צריך Schema?</h2>
+          <p>נתונים מובנים (Schema.org / JSON-LD) הם דרך "לספר" למנועי החיפוש ולמנועי ה-AI מה בדיוק יש בעמוד — שזה עסק, מה שם העסק, איפה הוא, מה השירות, ומה השאלות הנפוצות. זה מה שמאפשר תוצאות עשירות בגוגל (כוכבים, שאלות נפתחות, פאנל עסק) ומשפר את הסיכוי שהעסק יצוטט בתשובות AI. זו אחת השכבות הבסיסיות של <a href="bniyat-atarim-le-asakim.html#seo">SEO טכני</a> — וגם אחת הזולות ליישום.</p>
+          <p>הכלי הזה מייצר את הסוגים הנפוצים ביותר לעסק מקומי. צריך משהו מותאם יותר, או אתר שלם שנבנה עם כל שכבת ה-SEO מהיסוד? <a href="index.html#contact">דברו איתנו</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <a href="index.html" class="logo"><span class="dot"></span>MC&nbsp;<b class="g">Digital</b></a>
+      <nav class="footer-links" aria-label="קישורי פוטר">
+        <a href="bniyat-atarim-le-asakim.html">בניית אתרים לעסקים</a>
+        <a href="website-design.html">אתר תדמית</a>
+        <a href="app-development.html">פיתוח אפליקציות</a>
+        <a href="ecommerce-stores.html">חנויות אונליין</a>
+        <a href="paid-campaigns.html">קמפיינים</a>
+        <a href="ai-automation.html">אוטומציות AI</a>
+        <a href="portfolio.html">תיק עבודות</a>
+        <a href="faq.html">שאלות ותשובות</a>
+        <a href="blog/index.html">בלוג</a>
+        <a href="about.html">אודות</a>
+        <a href="accessibility.html">נגישות</a>
+        <a href="privacy-policy.html">מדיניות פרטיות</a>
+        <a href="terms.html">תקנון</a>
+      </nav>
+      <span class="muted">© <span id="year">2026</span> MC Digital ✦</span>
+    </div>
+  </footer>
+
+  <a href="#" data-wa class="wa-float" aria-label="שלחו לנו הודעת וואטסאפ" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.6-2.6-1.1-4.3-3.8-4.4-4-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.2c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.4l.8 2c.1.2.1.4 0 .6l-.4.6c-.1.2-.3.4-.1.7.1.3.7 1.1 1.5 1.8 1 .9 1.9 1.2 2.2 1.3.3.1.4.1.6-.1l.9-1c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.2.1.7-.1 1.3z"/></svg>
+  </a>
+
+  <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/accessibility.js" defer></script>
+  <script src="assets/js/cookie-consent.js" defer></script>
+
+  <script>
+  (function () {
+    var $ = function (id) { return document.getElementById(id); };
+    var DAY_MAP = {
+      "א": "Su", "ב": "Mo", "ג": "Tu", "ד": "We", "ה": "Th", "ו": "Fr", "ש": "Sa",
+      "ראשון": "Su", "שני": "Mo", "שלישי": "Tu", "רביעי": "We", "חמישי": "Th", "שישי": "Fr", "שבת": "Sa"
+    };
+
+    function toggle(cbId, blockId, whenChecked) {
+      var cb = $(cbId), block = $(blockId);
+      if (!cb || !block) return;
+      var sync = function () {
+        var show = whenChecked === false ? !cb.checked : cb.checked;
+        block.hidden = !show;
+        build();
+      };
+      cb.addEventListener("change", sync);
+      sync();
+    }
+
+    function cleanPhone(p) {
+      if (!p) return "";
+      var digits = p.replace(/[^\d+]/g, "");
+      if (digits.charAt(0) === "0") digits = "+972" + digits.slice(1);
+      return digits;
+    }
+
+    function parseHours(txt) {
+      if (!txt) return null;
+      // expects something like: א׳-ה׳ 09:00-18:00  (also "א-ה 9:00-18:00")
+      var timeMatch = txt.match(/(\d{1,2}:\d{2})\s*[-–]\s*(\d{1,2}:\d{2})/);
+      if (!timeMatch) return null;
+      var opens = timeMatch[1], closes = timeMatch[2];
+      var dayPart = txt.slice(0, txt.indexOf(timeMatch[0])).replace(/[׳'"]/g, "").trim();
+      var range = dayPart.match(/([א-ת]+)\s*[-–]\s*([א-ת]+)/);
+      var days = [];
+      var order = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
+      if (range && DAY_MAP[range[1]] && DAY_MAP[range[2]]) {
+        var i1 = order.indexOf(DAY_MAP[range[1]]), i2 = order.indexOf(DAY_MAP[range[2]]);
+        for (var i = i1; i <= i2; i++) days.push(order[i]);
+      } else {
+        dayPart.split(/[,\s]+/).forEach(function (d) {
+          var k = d.replace(/[־-]/g, "").trim();
+          if (DAY_MAP[k]) days.push(DAY_MAP[k]);
+        });
+      }
+      if (!days.length) return null;
+      return { "@type": "OpeningHoursSpecification", "dayOfWeek": days.map(function (d) {
+        return { "Su": "Sunday", "Mo": "Monday", "Tu": "Tuesday", "We": "Wednesday", "Th": "Thursday", "Fr": "Friday", "Sa": "Saturday" }[d];
+      }), "opens": opens, "closes": closes };
+    }
+
+    function lines(txt) {
+      return (txt || "").split("\n").map(function (s) { return s.trim(); }).filter(Boolean);
+    }
+
+    // ---- FAQ rows ----
+    function addFaqRow(q, a) {
+      var wrap = document.createElement("div");
+      wrap.className = "faq-pair";
+      wrap.innerHTML =
+        '<button type="button" class="btn-mini btn-rm" aria-label="הסרה">✕</button>' +
+        '<div class="fld"><label>שאלה</label><input type="text" class="fq" value="' + (q || "").replace(/"/g, "&quot;") + '"></div>' +
+        '<div class="fld" style="margin-bottom:0"><label>תשובה</label><textarea class="fa">' + (a || "") + '</textarea></div>';
+      wrap.querySelector(".btn-rm").addEventListener("click", function () { wrap.remove(); build(); });
+      wrap.querySelectorAll("input,textarea").forEach(function (el) { el.addEventListener("input", build); });
+      $("faqList").appendChild(wrap);
+    }
+
+    function buildGraph() {
+      var g = [];
+      var url = $("bizUrl").value.trim() || "https://example.co.il/";
+      var biz = {
+        "@type": $("bizType").value,
+        "@id": url + "#business",
+        "name": $("bizName").value.trim(),
+        "url": url
+      };
+      if ($("bizDesc").value.trim()) biz.description = $("bizDesc").value.trim();
+      if ($("bizImage").value.trim()) biz.image = $("bizImage").value.trim();
+      var ph = cleanPhone($("bizPhone").value);
+      if (ph) biz.telephone = ph;
+      if ($("bizEmail").value.trim()) biz.email = $("bizEmail").value.trim();
+
+      if ($("hasAddr").checked) {
+        var addr = { "@type": "PostalAddress", "addressCountry": "IL" };
+        if ($("aStreet").value.trim()) addr.streetAddress = $("aStreet").value.trim();
+        if ($("aCity").value.trim()) addr.addressLocality = $("aCity").value.trim();
+        if ($("aZip").value.trim()) addr.postalCode = $("aZip").value.trim();
+        biz.address = addr;
+      }
+      if ($("hasArea").checked && $("areaServed").value.trim()) {
+        var areas = $("areaServed").value.split(",").map(function (s) { return s.trim(); }).filter(Boolean);
+        biz.areaServed = areas.length === 1 ? areas[0] : areas;
+      }
+      var hours = parseHours($("bizHours").value.trim());
+      if (hours) biz.openingHoursSpecification = hours;
+      var social = lines($("bizSocial").value);
+      if (social.length) biz.sameAs = social;
+      g.push(biz);
+
+      if ($("hasService").checked && $("svcName").value.trim()) {
+        var svc = {
+          "@type": "Service",
+          "name": $("svcName").value.trim(),
+          "provider": { "@id": url + "#business" },
+          "areaServed": { "@type": "Country", "name": "Israel" }
+        };
+        if ($("svcDesc").value.trim()) svc.description = $("svcDesc").value.trim();
+        g.push(svc);
+      }
+
+      if ($("hasFaq").checked) {
+        var qa = [];
+        $("faqList").querySelectorAll(".faq-pair").forEach(function (row) {
+          var q = row.querySelector(".fq").value.trim();
+          var a = row.querySelector(".fa").value.trim();
+          if (q && a) qa.push({ "@type": "Question", "name": q, "acceptedAnswer": { "@type": "Answer", "text": a } });
+        });
+        if (qa.length) g.push({ "@type": "FAQPage", "mainEntity": qa });
+      }
+
+      if ($("hasCrumb").checked) {
+        var items = [];
+        lines($("crumbs").value).forEach(function (ln, i) {
+          var parts = ln.split("|").map(function (s) { return s.trim(); });
+          if (parts[0]) {
+            var li = { "@type": "ListItem", "position": i + 1, "name": parts[0] };
+            if (parts[1]) li.item = parts[1];
+            items.push(li);
+          }
+        });
+        if (items.length) g.push({ "@type": "BreadcrumbList", "itemListElement": items });
+      }
+
+      return { "@context": "https://schema.org", "@graph": g };
+    }
+
+    function build() {
+      var obj = buildGraph();
+      var json = JSON.stringify(obj, null, 2);
+      $("output").textContent = '<script type="application/ld+json">\n' + json + '\n<\/script>';
+    }
+
+    // wire toggles
+    toggle("hasAddr", "addrBlock");
+    toggle("hasArea", "areaBlock");
+    toggle("hasService", "serviceBlock");
+    toggle("hasFaq", "faqBlock");
+    toggle("hasCrumb", "crumbBlock");
+
+    $("sform").addEventListener("input", build);
+    $("sform").addEventListener("change", build);
+    $("addFaq").addEventListener("click", function () { addFaqRow("", ""); build(); });
+
+    // seed 2 FAQ rows
+    addFaqRow("כמה עולה השירות?", "המחיר נקבע לפי היקף, בשיחת ייעוץ ראשונה ללא עלות.");
+    addFaqRow("באילו אזורים אתם נותנים שירות?", "בכל הארץ, כולל שירות מרחוק.");
+
+    $("copyBtn").addEventListener("click", function () {
+      var text = $("output").textContent;
+      navigator.clipboard.writeText(text).then(function () {
+        var m = $("copiedMsg"); m.hidden = false;
+        setTimeout(function () { m.hidden = true; }, 1800);
+      });
+    });
+    $("dlBtn").addEventListener("click", function () {
+      var blob = new Blob([$("output").textContent], { type: "text/html" });
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "schema.html";
+      document.body.appendChild(a); a.click(); a.remove();
+    });
+
+    build();
+  })();
+  </script>
+</body>
+</html>

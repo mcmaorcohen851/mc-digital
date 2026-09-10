@@ -1,5 +1,38 @@
 # MC Digital — יומן SEO (מנוהל ע"י הסוכן mc-digital-seo)
 
+## 2026-09-10 — מבנה Pillar/Cluster + נכס לינקבילי + פריסת אתרי לקוחות
+ריצה יזומה (לפי בקשת מאור) ליישום אסטרטגיית Topical Authority.
+
+**1. עמוד עוגן (Pillar):**
+- `bniyat-atarim-le-asakim.html` — "בניית אתרים לעסקים בישראל — המדריך המלא 2026". ~2,000 מילים, מכוון לביטוי הקטגורי. Article + FAQPage (6 שאלות) + BreadcrumbList. כולל: תיבת "בקצרה" מעל הקיפול (הפחתת pogo-sticking), תוכן עניינים עם עוגנים, 2 טבלאות השוואה, byline של מאור, צ'קליסט, וסקשן "המשך קריאה" לכל הקלאסטרים.
+
+**2. שני קלאסטרים חדשים:**
+- `blog/wordpress-o-atar-bekod.html` — "וורדפרס או אתר בקוד — מה עדיף לעסק קטן". BlogPosting + FAQPage (4) + BreadcrumbList. 2 טבלאות. מקשר לפילר ×2 ולאחים.
+- `blog/lama-atar-lo-mofia-google.html` — "למה האתר שלי לא מופיע בגוגל — 9 סיבות". מדריך אבחון עם תיבת בדיקת `site:` מעל הקיפול. BlogPosting + FAQPage (4) + BreadcrumbList.
+
+**3. נכס לינקבילי — כלי חינמי:**
+- `schema-generator.html` — מחולל Schema (JSON-LD) לעסקים בישראל. Client-side מלא, בלי backend. מייצר LocalBusiness/ProfessionalService (9 סוגים), Service, FAQPage (בנאי דינמי), BreadcrumbList. שדות ישראליים (ח.פ מרומז, אזור שירות, פרסינג שעות עברית→openingHoursSpecification, טלפון→+972). כפתור העתקה + הורדה. WebApplication schema. אומת בדפדפן — הפלט נוצר תקין.
+- **הבא בתור לנכס:** מחשבון עלות אתר/אפליקציה אינטראקטיבי (קיים גרסה ב-mc-digital.vercel.app — לשקול פורט).
+
+**4. קישוריות פנימית:**
+- עמוד הבית: קישור לפילר מסקשן השירותים.
+- פוטר: נוסף "בניית אתרים לעסקים" + "מחולל Schema" לפוטר בכל 16 עמודי ה-HTML (סקריפט Perl אחיד).
+- website-design.html: קישור גוף לפילר בפסקת הפתיחה.
+- blog/index.html: כרטיסי 2 הפוסטים החדשים + תיבת "התחילו מהמדריך" + ItemList schema הורחב ל-7 פריטים (פילר ראשון).
+- blog/kama-ole... ו-blog/bniyat-hanut... : קישור גוף לפילר.
+- כל קלאסטר חדש: "מאמרים קשורים" ל-3 אחים + פילר.
+
+**5. קבצים:**
+- sitemap.xml: 22 כתובות (היה 17) — נוספו פילר, 2 קלאסטרים, מחולל Schema. lastmod 2026-09-10 לכל מה שהשתנה.
+- llms.txt: נוספו סקשן "מדריך עוגן" ו"כלים חינמיים" + 2 הפוסטים.
+- assets/css/style.css: נוספו סגנונות — `.answer-box`, `.toc`, `.prose table/.table-wrap`, `.byline`, `.prose h3/ol`, scroll-margin לעוגנים.
+- seo/keywords.md: עודכן טור סטטוס + תור תוכן חדש (קלאסטרים: וואטסאפ-לטופס, SEO מקומי).
+
+**6. אתרי לקוחות — קרדיט footer (backlinks אמיתיים):** הושלמו והועלו לאוויר בפועל: shai-sabag-coatings.netlify.app (11 עמודים), funky-music.vercel.app. נותר: ross365.co.il (Elementor — ממתין למאור). ה-vercel של mc-digital עצמו (mc-digital.vercel.app) עלה כאתר נפרד — **מאור בחר את github.io כקנוני**, לא לבצע איחוד/ריダירקט כרגע.
+
+**נשאר:** קלאסטרים נוספים (וואטסאפ-לטופס, SEO מקומי, בניית אתר עם AI); מחשבון עלות כנכס; ross365 footer; חיבור GSC service account.
+
+
 ## 2026-08-25 — ריצה אגרסיבית מקיפה (הרבה מעבר לריצה השבועית)
 הריצה השבועית הקודמת (שהייתה אמורה לרוץ אחרי 2026-07-17) נעצרה באמצע — לא נמצא commit SEO חדש בין 2026-07-17 לתאריך הזה. התחלנו מנקודה נקייה עם ריצה אחת גדולה שמכסה כמה שבועות תוכן בבת אחת. הכול White-Hat בלבד.
 

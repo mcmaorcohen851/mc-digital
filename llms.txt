@@ -27,9 +27,17 @@ MC Digital הוא סטודיו דיגיטלי המתמחה בהקמת נוכחו
 - Meta Ads MCP — כלי אוטומציה שמחבר AI ל-Meta Marketing API לניהול קמפיינים.
 - מורן דהן — קמפיין ממומן למותג תכשיטים + דשבורד אנליטיקס בזמן אמת.
 
+## מדריך עוגן
+- [בניית אתרים לעסקים — המדריך המלא 2026](https://mcmaorcohen851.github.io/mc-digital/bniyat-atarim-le-asakim.html): עמוד העוגן המרכז את כל ההחלטות בבניית אתר לעסק — סוגי אתרים ומחירים, וורדפרס מול קוד, שלבי עבודה, SEO טכני, טעויות וצ'קליסט.
+
+## כלים חינמיים
+- [מחולל Schema (JSON-LD) לעסקים בישראל](https://mcmaorcohen851.github.io/mc-digital/schema-generator.html): כלי חינמי בעברית ליצירת קוד נתונים מובנים — LocalBusiness, Service, FAQPage, BreadcrumbList — עם שדות ישראליים ופלט מוכן להעתקה.
+
 ## בלוג — מדריכים
 - [הבלוג המלא](https://mcmaorcohen851.github.io/mc-digital/blog/index.html)
 - [כמה עולה לבנות אתר לעסק ב-2026?](https://mcmaorcohen851.github.io/mc-digital/blog/kama-ole-livnot-atar-le-esek-2026.html): מחירון מלא לפי סוג אתר.
+- [וורדפרס או אתר בקוד — מה עדיף לעסק קטן?](https://mcmaorcohen851.github.io/mc-digital/blog/wordpress-o-atar-bekod.html): השוואה כנה — מהירות, אבטחה, עלות תחזוקה, עריכה עצמאית וגמישות.
+- [למה האתר שלי לא מופיע בגוגל?](https://mcmaorcohen851.github.io/mc-digital/blog/lama-atar-lo-mofia-google.html): מדריך אבחון — 9 סיבות נפוצות ואיך לבדוק ולתקן כל אחת.
 - [פיתוח אפליקציה לעסק קטן: כמה זה עולה?](https://mcmaorcohen851.github.io/mc-digital/blog/pituach-aplikatzia-le-esek-katan-mechir.html): טווחי מחיר, שלבי עבודה וטעויות נפוצות.
 - [קמפיין פייסבוק לעסק קטן: המדריך המלא](https://mcmaorcohen851.github.io/mc-digital/blog/kampein-facebook-le-esek-katan.html): תקציב, קהלים, קריאייטיב AI ומקרה בוחן אמיתי.
 - [בניית חנות אונליין ב-WooCommerce](https://mcmaorcohen851.github.io/mc-digital/blog/bniyat-hanut-online-woocommerce.html): מדריך שלב-אחר-שלב ומקרה בוחן.
