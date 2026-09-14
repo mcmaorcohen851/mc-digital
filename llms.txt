@@ -42,6 +42,7 @@ MC Digital הוא סטודיו דיגיטלי המתמחה בהקמת נוכחו
 - [פיתוח אפליקציה לעסק קטן: כמה זה עולה?](https://mcmaorcohen851.github.io/mc-digital/blog/pituach-aplikatzia-le-esek-katan-mechir.html): טווחי מחיר, שלבי עבודה וטעויות נפוצות.
 - [קמפיין פייסבוק לעסק קטן: המדריך המלא](https://mcmaorcohen851.github.io/mc-digital/blog/kampein-facebook-le-esek-katan.html): תקציב, קהלים, קריאייטיב AI ומקרה בוחן אמיתי.
 - [בניית חנות אונליין ב-WooCommerce](https://mcmaorcohen851.github.io/mc-digital/blog/bniyat-hanut-online-woocommerce.html): מדריך שלב-אחר-שלב ומקרה בוחן.
+- [בניית אתר עם AI ב-2026](https://mcmaorcohen851.github.io/mc-digital/blog/bniyat-atar-im-ai.html): בוני אתרים אוטומטיים מול פיתוח מקצועי שמשלב AI — ההבדל, המגבלות, ואיך לבחור.
 
 ## למה לבחור ב-MC Digital
 - מהירות: כלי AI מקצרים פרויקט של חודשיים לשבועות.
