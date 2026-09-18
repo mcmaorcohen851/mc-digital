@@ -39,4 +39,5 @@ Allow: /
 
 # מפת אתר + קובץ הנחיות ל-AI
 Sitemap: https://mcmaorcohen851.github.io/mc-digital/sitemap.xml
+Sitemap: https://mcmaorcohen851.github.io/mc-digital/sitemap-mc.xml
 # LLM guide: https://mcmaorcohen851.github.io/mc-digital/llms.txt
