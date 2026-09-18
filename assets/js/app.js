@@ -303,7 +303,9 @@
    * ======================================================= */
   var waText = encodeURIComponent("היי מאור! ראיתי את האתר של MC Digital ואשמח לשמוע פרטים");
   document.querySelectorAll("[data-wa]").forEach(function (a) {
-    a.href = "https://wa.me/" + WHATSAPP + "?text=" + waText;
+    // data-wa="טקסט" — הודעה ייעודית לדף (למשל דף מוצר). ריק = ההודעה הכללית
+    var custom = a.getAttribute("data-wa");
+    a.href = "https://wa.me/" + WHATSAPP + "?text=" + (custom ? encodeURIComponent(custom) : waText);
     a.addEventListener("click", function () {
       if (typeof gtag === "function") gtag("event", "generate_lead", { method: "whatsapp" });
     });
