@@ -26,6 +26,8 @@ MC Digital הוא סטודיו דיגיטלי המתמחה בהקמת נוכחו
 - Magic Garden — משחק ילדים ויראלי (PWA).
 - Meta Ads MCP — כלי אוטומציה שמחבר AI ל-Meta Marketing API לניהול קמפיינים.
 - מורן דהן — קמפיין ממומן למותג תכשיטים + דשבורד אנליטיקס בזמן אמת.
+- [בוט וואטסאפ לקביעת תורים למספרות](https://mcmaorcohen851.github.io/mc-digital/bot-torim-lemisparot.html): לקוחות קובעים תור בוואטסאפ 24/7, סנכרון אוטומטי ליומן, תזכורות ורשימת המתנה.
+- [ספר ברכות דיגיטלי לבר/בת מצווה](https://mcmaorcohen851.github.io/mc-digital/sefer-brachot-digitali.html): אורחים משאירים ברכת וידאו בסריקת QR, בלי אפליקציה — ספר מזכרת דיגיטלי + PDF + קבצים להדפסה.
 
 ## מדריך עוגן
 - [בניית אתרים לעסקים — המדריך המלא 2026](https://mcmaorcohen851.github.io/mc-digital/bniyat-atarim-le-asakim.html): עמוד העוגן המרכז את כל ההחלטות בבניית אתר לעסק — סוגי אתרים ומחירים, וורדפרס מול קוד, שלבי עבודה, SEO טכני, טעויות וצ'קליסט.
@@ -43,6 +45,7 @@ MC Digital הוא סטודיו דיגיטלי המתמחה בהקמת נוכחו
 - [קמפיין פייסבוק לעסק קטן: המדריך המלא](https://mcmaorcohen851.github.io/mc-digital/blog/kampein-facebook-le-esek-katan.html): תקציב, קהלים, קריאייטיב AI ומקרה בוחן אמיתי.
 - [בניית חנות אונליין ב-WooCommerce](https://mcmaorcohen851.github.io/mc-digital/blog/bniyat-hanut-online-woocommerce.html): מדריך שלב-אחר-שלב ומקרה בוחן.
 - [בניית אתר עם AI ב-2026](https://mcmaorcohen851.github.io/mc-digital/blog/bniyat-atar-im-ai.html): בוני אתרים אוטומטיים מול פיתוח מקצועי שמשלב AI — ההבדל, המגבלות, ואיך לבחור.
+- [חיבור וואטסאפ ביזנס לטופס לידים באתר](https://mcmaorcohen851.github.io/mc-digital/blog/whatsapp-business-tofes-leadim.html): קישור click-to-chat פשוט מול WhatsApp Business API רשמי מול בוט מלא — 3 שיטות, השוואת עלות ומורכבות, ואיך לבחור.
 
 ## למה לבחור ב-MC Digital
 - מהירות: כלי AI מקצרים פרויקט של חודשיים לשבועות.
