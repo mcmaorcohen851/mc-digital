@@ -54,66 +54,7 @@
     ]
   }
   </script>
-  <style>
-    /* ─── רכיבים ייחודיים לדף המוצר. כל השאר — מ-style.css של האתר ─── */
-    .sb-hero { padding-block: 7.5rem 3.5rem; position: relative; overflow: hidden; isolation: isolate; }
-    .sb-hero::before { content: ""; position: absolute; inset: -30% -10% auto; height: 80%;
-      background: radial-gradient(closest-side, rgba(139,92,246,.14), transparent 70%); pointer-events: none; z-index: -1; }
-    .sb-hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 3rem; align-items: center; position: relative; }
-    .sb-hero h1 { font-size: clamp(2.1rem, 5vw, 3.6rem); font-weight: 900; line-height: 1.12; margin: .9rem 0 1rem; }
-    .sb-hero .lead { color: var(--muted); font-size: 1.12rem; max-width: 52ch; }
-    .sb-ticks { display: flex; flex-wrap: wrap; gap: .4rem 1.3rem; margin-top: 1.4rem; color: var(--muted); font-size: .92rem; list-style: none; padding: 0; }
-    .sb-ticks li::before { content: "✓ "; color: var(--cyan); font-weight: 800; }
-    .sb-shot { border-radius: 14px; overflow: hidden; border: 1px solid var(--border);
-      box-shadow: 0 40px 100px rgba(0,0,0,.6), 0 0 60px rgba(139,92,246,.18); }
-    .sb-shot img { display: block; width: 100%; height: auto; }
-    .sb-tilt { transform: perspective(1600px) rotateX(10deg) rotateZ(-2deg); }
-
-    .sb-inside { display: grid; grid-template-columns: 1.5fr .75fr; gap: 2.2rem; align-items: center; }
-    .sb-phone { width: min(270px, 100%); margin-inline: auto; padding: 10px; border-radius: 38px;
-      background: linear-gradient(160deg, #26223d, #0c0a18); border: 1px solid var(--border);
-      box-shadow: 0 30px 80px rgba(0,0,0,.6), 0 0 50px rgba(34,211,238,.15); }
-    .sb-phone img { display: block; width: 100%; height: auto; border-radius: 28px; }
-    .sb-cap { color: var(--muted); font-size: .9rem; text-align: center; margin-top: .8rem; }
-
-    .sb-tpl { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
-    .sb-tpl figure { margin: 0; }
-    .sb-tpl img { width: 100%; height: auto; border-radius: 10px; display: block; border: 1px solid var(--border); box-shadow: 0 16px 40px rgba(0,0,0,.5); }
-    .sb-tpl figcaption { text-align: center; margin-top: .6rem; }
-    .sb-tpl figcaption b { display: block; font-size: .95rem; }
-    .sb-tpl figcaption span { color: var(--muted); font-size: .8rem; }
-
-    .sb-feats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
-
-    .sb-pkgs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; align-items: stretch; }
-    .sb-pkg { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 1.8rem 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
-    .sb-pkg.hot { border-color: rgba(139,92,246,.6); box-shadow: 0 0 0 1px rgba(139,92,246,.35), 0 20px 60px rgba(139,92,246,.2); transform: translateY(-8px); }
-    .sb-pkg .tag { align-self: flex-start; font-size: .78rem; font-weight: 800; padding: .25rem .7rem; border-radius: 99px; background: var(--grad); color: #fff; }
-    .sb-pkg h3 { font-size: 1.45rem; font-weight: 900; }
-    .sb-pkg .sub { color: var(--muted); font-size: .9rem; margin-top: -.6rem; }
-    .sb-pkg .price { font-weight: 900; font-size: 1.15rem; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .sb-pkg ul { list-style: none; padding: 0; margin: 0; flex: 1; display: grid; gap: .5rem; font-size: .93rem; }
-    .sb-pkg li::before { content: "✓"; color: var(--cyan); font-weight: 800; margin-inline-end: .5rem; }
-
-    section.sb-sec { padding-block: 4.5rem; }
-
-    @media (max-width: 960px) {
-      .sb-hero-grid, .sb-inside { grid-template-columns: 1fr; }
-      .sb-hero { padding-block: 6.5rem 2rem; text-align: center; }
-      .sb-hero .lead { margin-inline: auto; }
-      .sb-ticks, .sb-hero .hero-actions { justify-content: center; }
-      .sb-feats { grid-template-columns: repeat(2, 1fr); }
-      .sb-tpl { grid-template-columns: repeat(3, 1fr); }
-      .sb-pkgs { grid-template-columns: 1fr; }
-      .sb-pkg.hot { transform: none; }
-    }
-    @media (max-width: 520px) {
-      .sb-feats { grid-template-columns: 1fr; }
-      .sb-tpl { grid-template-columns: repeat(2, 1fr); }
-      .sb-tilt { transform: none; }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/product-landing.css">
 </head>
 <body>
   <div class="fx-progress" aria-hidden="true"></div>
