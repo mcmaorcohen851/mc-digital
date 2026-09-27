@@ -173,6 +173,16 @@
       link: "sefer-brachot-digitali.html"
     },
     {
+      id: "maarechet-nihul-suita",
+      name: "מערכת ניהול לסוויטת התארגנות",
+      cat: "auto", catLabel: "אוטומציה / ניהול עסק",
+      desc: "יומן חודשי, כרטיס כלה, מקדמות ויתרות, לידים, תבניות וואטסאפ וחתימת הסכם מהטלפון — הכל בעברית, מותאם לנייד, ועובד גם בלי אינטרנט.",
+      tech: ["ניהול יומן", "חתימה דיגיטלית", "תבניות וואטסאפ", "עבודה אופליין"],
+      img: "assets/img/hatzar-hakala/calendar-desktop.jpg",
+      alt: "מערכת ניהול לסוויטת התארגנות — יומן חודשי עם אירועים",
+      link: "maarechet-nihul-suita.html"
+    },
+    {
       id: "moran-dahan",
       name: "מורן דהן — קמפיין תכשיטים + דשבורד",
       cat: "ads", catLabel: "קמפיינים",
