@@ -36,6 +36,7 @@ MC Digital הוא סטודיו דיגיטלי המתמחה בהקמת נוכחו
 
 ## כלים חינמיים
 - [מחשבון עלות בניית אתר ואפליקציה](https://mcmaorcohen851.github.io/mc-digital/machshevon-alut-atar.html): כלי חינמי להערכת טווח מחיר ולוח זמנים לפרויקט — לפי סוג אתר, מספר עמודים, רמת עיצוב ואינטגרציות. בלי הרשמה.
+- [מחשבון ROI לאוטומציה](https://mcmaorcohen851.github.io/mc-digital/machshevon-roi-automatzia.html): כלי חינמי לבדיקת החזר השקעה באוטומציה או בוט וואטסאפ — מזינים שעות שנחסכות בשבוע ועלות שעת עבודה, ומקבלים זמן החזר השקעה וחיסכון שנתי משוער. בלי הרשמה.
 - [מחולל Schema (JSON-LD) לעסקים בישראל](https://mcmaorcohen851.github.io/mc-digital/schema-generator.html): כלי חינמי בעברית ליצירת קוד נתונים מובנים — LocalBusiness, Service, FAQPage, BreadcrumbList — עם שדות ישראליים ופלט מוכן להעתקה.
 
 ## בלוג — מדריכים
