@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://mcmaorcohen851.github.io/mc-digital/app-development.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -164,13 +164,13 @@
   </url>
   <url>
     <loc>https://mcmaorcohen851.github.io/mc-digital/privacy-policy.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://mcmaorcohen851.github.io/mc-digital/terms.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -191,5 +191,29 @@
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mcmaorcohen851.github.io/mc-digital/chavilot-bniyat-atar.html</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mcmaorcohen851.github.io/mc-digital/kidum-organi-ai.html</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://mcmaorcohen851.github.io/mc-digital/hangashat-atarim.html</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://mcmaorcohen851.github.io/mc-digital/chatbot-ai-vezimun-torim.html</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
 </urlset>

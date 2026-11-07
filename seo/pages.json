@@ -53,14 +53,26 @@
   "bot-torim-lemisparot.html": {
     "focusKeyword": "בוט תורים למספרה"
   },
+  "chatbot-ai-vezimun-torim.html": {
+    "focusKeyword": "צ'אטבוט AI לאתר"
+  },
+  "chavilot-bniyat-atar.html": {
+    "focusKeyword": "חבילות בניית אתר"
+  },
   "ecommerce-stores.html": {
     "focusKeyword": "בניית חנות אונליין"
   },
   "faq.html": {
     "focusKeyword": "שאלות ותשובות בניית אתרים"
   },
+  "hangashat-atarim.html": {
+    "focusKeyword": "הנגשת אתרים"
+  },
   "index.html": {
     "focusKeyword": "סטודיו דיגיטלי"
+  },
+  "kidum-organi-ai.html": {
+    "focusKeyword": "קידום אורגני לעסקים"
   },
   "maarechet-nihul-suita.html": {
     "focusKeyword": "אפליקציה לניהול העסק"

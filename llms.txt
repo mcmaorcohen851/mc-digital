@@ -17,6 +17,10 @@ MC Digital הוא סטודיו דיגיטלי המתמחה בהקמת נוכחו
 - [בניית חנויות אונליין](https://mcmaorcohen851.github.io/mc-digital/ecommerce-stores.html): חנויות WooCommerce, Shopify או פיתוח מותאם — קטלוג, עגלה, סליקה ישראלית ו-SEO למוצרים.
 - [ניהול קמפיינים ממומנים](https://mcmaorcohen851.github.io/mc-digital/paid-campaigns.html): מודעות בפייסבוק ואינסטגרם עם אסטרטגיה, קריאייטיב מבוסס AI, אופטימיזציה שוטפת ודשבורד שקוף. אפשר להתחיל גם בתקציב של 30-50 ₪ ליום.
 - [אוטומציות ובינה מלאכותית](https://mcmaorcohen851.github.io/mc-digital/ai-automation.html): בוטים, אוטומציית שיווק, חיבור מערכות (API) ודשבורדים חכמים שחוסכים שעות עבודה בשבוע.
+- [חבילות בניית אתר ומחירים](https://mcmaorcohen851.github.io/mc-digital/chavilot-bniyat-atar.html): דף נחיתה החל מ-1,000 ₪, אתר תדמית החל מ-4,000 ₪, אתר עסקי החל מ-9,000 ₪, חנות החל מ-8,000 ₪, ותחזוקה חודשית.
+- [קידום אורגני ו-AI (SEO ו-GEO)](https://mcmaorcohen851.github.io/mc-digital/kidum-organi-ai.html): קידום בגוגל ובמנועי AI כמו ChatGPT ו-Gemini, בלי קישורים קנויים. ליווי החל מ-1,500 ₪ לחודש.
+- [הנגשת אתרים](https://mcmaorcohen851.github.io/mc-digital/hangashat-atarim.html): הנגשה לפי תקן ישראלי 5568 בקוד עצמו, כולל הצהרת נגישות.
+- [צ'אטבוט AI וזימון תורים](https://mcmaorcohen851.github.io/mc-digital/chatbot-ai-vezimun-torim.html): צ'אטבוט שעונה ללקוחות 24/7 ומערכת לקביעת תורים עם תזכורות.
 
 ## תיק עבודות
 - [תיק העבודות המלא](https://mcmaorcohen851.github.io/mc-digital/portfolio.html)
