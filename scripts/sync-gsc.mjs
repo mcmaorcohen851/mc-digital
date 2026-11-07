@@ -21,6 +21,11 @@ const OUT = resolve(__dirname, "../dashboard/gsc-data.js");
 const SITE_URL = process.env.GSC_SITE_URL || "https://mcmaorcohen851.github.io/mc-digital/";
 /* נתיב קובץ המפתח של חשבון השירות (JSON). אפשר להעביר גם דרך משתנה סביבה. */
 const KEY_FILE = process.env.GSC_KEY_FILE || resolve(__dirname, "service-account.json");
+/* OAuth (ברירת המחדל): הארגון בגוגל חוסם מפתחות לחשבונות שירות, אז מתחברים
+   כמשתמש עם הרשאת קריאה בלבד. האסימון נשמר מקומית ולא עולה לגיט. */
+const OAUTH_CLIENT = resolve(__dirname, "oauth-client.json");
+const OAUTH_TOKEN = resolve(__dirname, "oauth-token.json");
+const SCOPES = ["https://www.googleapis.com/auth/webmasters.readonly"];
 
 /* מילות המפתח שנעקוב אחרי המיקום שלהן לאורך זמן (בהתאם ל-seo/keywords.md) */
 const TARGET_KEYWORDS = [
@@ -109,13 +114,63 @@ function runDemo() {
 }
 
 /* ========================= מצב חי ========================= */
-async function runLive() {
-  if (!existsSync(KEY_FILE)) {
-    console.error("✗ לא נמצא קובץ מפתח:", KEY_FILE, "\n  ראה scripts/README.md ליצירת חשבון שירות, או הרץ עם --demo.");
-    process.exit(1);
+/* כניסה חד-פעמית: שרת זמני על 127.0.0.1 מקבל את הקוד מגוגל אחרי לחיצת "אישור" */
+async function oauthLogin(google, client) {
+  const http = await import("node:http");
+  return new Promise((resolveLogin, reject) => {
+    const server = http.createServer(async (req, res) => {
+      const url = new URL(req.url, "http://127.0.0.1");
+      const code = url.searchParams.get("code");
+      const error = url.searchParams.get("error");
+      if (!code && !error) { res.writeHead(404); return res.end(); }
+      res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
+      res.end(`<html dir="rtl" lang="he"><body style="font-family:sans-serif;padding:3rem;text-align:center">
+        <h1>${code ? "החיבור הצליח ✓" : "החיבור בוטל"}</h1><p>אפשר לסגור את החלון.</p></body></html>`);
+      server.close();
+      if (error) return reject(new Error(`גוגל החזיר שגיאה: ${error}`));
+      try {
+        const { tokens } = await client.getToken({ code, redirect_uri: client._redirect });
+        resolveLogin(tokens);
+      } catch (e) { reject(e); }
+    });
+    server.listen(0, "127.0.0.1", () => {
+      client._redirect = `http://127.0.0.1:${server.address().port}`;
+      const authUrl = client.generateAuthUrl({
+        access_type: "offline", prompt: "consent", scope: SCOPES, redirect_uri: client._redirect,
+      });
+      console.log("\nפתחו את הכתובת הזו בדפדפן שמחובר לחשבון של האתר ואשרו:\n");
+      console.log(`AUTH_URL ${authUrl}\n`);
+    });
+    setTimeout(() => { server.close(); reject(new Error("לא התקבל אישור תוך 10 דקות")); }, 10 * 60 * 1000).unref();
+  });
+}
+
+async function getAuth(google) {
+  if (existsSync(OAUTH_CLIENT)) {
+    const { installed } = JSON.parse(readFileSync(OAUTH_CLIENT, "utf8"));
+    const client = new google.auth.OAuth2(installed.client_id, installed.client_secret);
+    const save = (tokens) => writeFileSync(OAUTH_TOKEN, JSON.stringify(tokens, null, 2), { mode: 0o600 });
+    let tokens = existsSync(OAUTH_TOKEN) && !process.argv.includes("--login") ? JSON.parse(readFileSync(OAUTH_TOKEN, "utf8")) : null;
+    if (!tokens) {
+      if (!process.stdin.isTTY && !process.argv.includes("--login")) {
+        throw new Error("עדיין אין אסימון OAuth. להריץ פעם אחת: node sync-gsc.mjs --login");
+      }
+      tokens = await oauthLogin(google, client);
+      save(tokens);
+      console.log("✓ האסימון נשמר ב-scripts/oauth-token.json");
+    }
+    client.setCredentials(tokens);
+    /* גוגל מחדש את אסימון הגישה לבד; שומרים כדי לא לאבד את ה-refresh token */
+    client.on("tokens", (fresh) => save({ ...tokens, ...fresh }));
+    return client;
   }
+  if (existsSync(KEY_FILE)) return new google.auth.GoogleAuth({ keyFile: KEY_FILE, scopes: SCOPES });
+  throw new Error("לא נמצא oauth-client.json או service-account.json. ראה scripts/README.md, או הרץ עם --demo.");
+}
+
+async function runLive() {
   const { google } = await import("googleapis");
-  const auth = new google.auth.GoogleAuth({ keyFile: KEY_FILE, scopes: ["https://www.googleapis.com/auth/webmasters.readonly"] });
+  const auth = await getAuth(google);
   const gsc = google.webmasters({ version: "v3", auth });
 
   const today = new Date();

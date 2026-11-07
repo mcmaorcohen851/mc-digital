@@ -10,7 +10,14 @@ node sync-gsc.mjs --demo
 ```
 זה כותב נתוני דוגמה כדי לראות שהדשבורד מתמלא. אחר כך מריצים במצב חי.
 
-## הגדרה חד-פעמית של חיבור אמיתי (~10 דקות)
+## החיבור הפעיל: OAuth (הוגדר 2026-11-07)
+הארגון `mcdigital1991-org` חוסם מפתחות לחשבונות שירות, ולכן מתחברים כמשתמש עם הרשאת קריאה בלבד.
+- פרויקט: `mc-digital-514013` בחשבון `mcdigital1991@gmail.com`. אפליקציית OAuth בשם "MC Digital Admin" (External, In production).
+- `oauth-client.json` — פרטי האפליקציה. `oauth-token.json` — אישור הגישה. שניהם ב-gitignore ולא עולים לגיטהאב.
+- אם האישור בוטל או נמחק, מתחברים מחדש פעם אחת: `node sync-gsc.mjs --login`, ופותחים את הכתובת שהסקריפט מדפיס בדפדפן שמחובר ל-`mcdigital1991@gmail.com`.
+- כשיש `oauth-client.json`, הסקריפט מתעלם מ-service account.
+
+## חלופה ישנה: חשבון שירות (חסום כרגע בחשבון הזה)
 כל השלבים בחינם. דורש את חשבון הגוגל של מאור.
 
 1. **צור פרויקט ב-Google Cloud** — https://console.cloud.google.com → New Project → שם: `mc-digital`.
