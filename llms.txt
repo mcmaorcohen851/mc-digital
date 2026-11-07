@@ -36,6 +36,7 @@ MC Digital הוא סטודיו דיגיטלי המתמחה בהקמת נוכחו
 
 ## כלים חינמיים
 - [מחשבון עלות בניית אתר ואפליקציה](https://mcmaorcohen851.github.io/mc-digital/machshevon-alut-atar.html): כלי חינמי להערכת טווח מחיר ולוח זמנים לפרויקט — לפי סוג אתר, מספר עמודים, רמת עיצוב ואינטגרציות. בלי הרשמה.
+- [מחשבון ROI לאוטומציה](https://mcmaorcohen851.github.io/mc-digital/machshevon-roi-automatzia.html): כלי חינמי לבדיקת החזר השקעה באוטומציה או בוט וואטסאפ — מזינים שעות שנחסכות בשבוע ועלות שעת עבודה, ומקבלים זמן החזר השקעה וחיסכון שנתי משוער. בלי הרשמה.
 - [מחולל Schema (JSON-LD) לעסקים בישראל](https://mcmaorcohen851.github.io/mc-digital/schema-generator.html): כלי חינמי בעברית ליצירת קוד נתונים מובנים — LocalBusiness, Service, FAQPage, BreadcrumbList — עם שדות ישראליים ופלט מוכן להעתקה.
 
 ## בלוג — מדריכים
@@ -50,6 +51,7 @@ MC Digital הוא סטודיו דיגיטלי המתמחה בהקמת נוכחו
 - [חיבור וואטסאפ ביזנס לטופס לידים באתר](https://mcmaorcohen851.github.io/mc-digital/blog/whatsapp-business-tofes-leadim.html): קישור click-to-chat פשוט מול WhatsApp Business API רשמי מול בוט מלא — 3 שיטות, השוואת עלות ומורכבות, ואיך לבחור.
 - [בוט וואטסאפ לעסק קטן — כמה זה עולה?](https://mcmaorcohen851.github.io/mc-digital/blog/bot-whatsapp-esek-katan-mechir.html): פירוט מחירים לפי רמת מורכבות, גורמי העלות האמיתיים וחישוב החזר השקעה.
 - [SEO מקומי לעסק בישראל — 7 טעויות נפוצות](https://mcmaorcohen851.github.io/mc-digital/blog/seo-mekomi-taut-nefotzot.html): Google Business Profile, עקביות NAP, ציטוטים וביקורות — הטעויות שמונעות מעסקים קטנים להופיע בחיפוש המקומי, ואיך לתקן כל אחת.
+- [בניית אתר תדמית מהיר לעסק](https://mcmaorcohen851.github.io/mc-digital/blog/atar-tadmit-mahir.html): כמה זמן זה באמת לוקח, מה מזרז ומה מעכב, ואיך AI מקצר את הפיתוח בלי לפגוע באיכות או ב-SEO.
 
 ## למה לבחור ב-MC Digital
 - מהירות: כלי AI מקצרים פרויקט של חודשיים לשבועות.
