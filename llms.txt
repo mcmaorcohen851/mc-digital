@@ -56,6 +56,7 @@ MC Digital הוא סטודיו דיגיטלי המתמחה בהקמת נוכחו
 - [בוט וואטסאפ לעסק קטן — כמה זה עולה?](https://mcmaorcohen851.github.io/mc-digital/blog/bot-whatsapp-esek-katan-mechir.html): פירוט מחירים לפי רמת מורכבות, גורמי העלות האמיתיים וחישוב החזר השקעה.
 - [SEO מקומי לעסק בישראל — 7 טעויות נפוצות](https://mcmaorcohen851.github.io/mc-digital/blog/seo-mekomi-taut-nefotzot.html): Google Business Profile, עקביות NAP, ציטוטים וביקורות — הטעויות שמונעות מעסקים קטנים להופיע בחיפוש המקומי, ואיך לתקן כל אחת.
 - [בניית אתר תדמית מהיר לעסק](https://mcmaorcohen851.github.io/mc-digital/blog/atar-tadmit-mahir.html): כמה זמן זה באמת לוקח, מה מזרז ומה מעכב, ואיך AI מקצר את הפיתוח בלי לפגוע באיכות או ב-SEO.
+- [דף נחיתה לעסק קטן — כמה זה עולה?](https://mcmaorcohen851.github.io/mc-digital/blog/daf-nechita-le-esek-katan-mechir.html): טבלת מחירים לפי רמת מורכבות, מתי דף נחיתה עדיף על אתר מלא, וטעויות שגורמות לדף יפה לא להמיר.
 
 ## למה לבחור ב-MC Digital
 - מהירות: כלי AI מקצרים פרויקט של חודשיים לשבועות.
